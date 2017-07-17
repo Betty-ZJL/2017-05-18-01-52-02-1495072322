@@ -1,9 +1,12 @@
 let Person = require('./person')
 // Write your code here
-function Student(name,age,klass){
-    person.call(this,name,age)
+module.exports = class Student extends Person{
+
+    constructor(name,age,klass){
+        super(name,age)
+        this.klass=klass
+    }
+    introduce(){
+        return('My nam is ${this.name}. I am ${this.age} years old. I am a Student. I am at Class ${this.klass}.')
+    }
 }
-Student.prototype.introduce=function(){
-  console.log('My name is '+this.name+'. I am '+this.age+' years old. I am a Student. I am at Class '+this.klass+'.')
-}
-module.exports = Student
